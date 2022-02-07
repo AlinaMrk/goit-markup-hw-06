@@ -317,6 +317,11 @@ ul {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.modal-close .close:hover,
+.modal-close .close:focus {
+  color: var(--accent-color);
+}
+
 /*---form-modal----*/
 .modal-form {
   padding: 40px 40px;
@@ -995,7 +1000,7 @@ textarea {
 }
 /*-----*/
 
-/*.form-field-conditions .checkbox-icon {
+.form-field-conditions .checkbox-box {
   display: inline-block;
   margin-right: 8px;
   width: 15px;
@@ -1004,7 +1009,7 @@ textarea {
 
   border-radius: 2px;
 }
-/.form-field-conditions .checkbox {
+.form-field-conditions .checkbox-box_vector {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1013,4 +1018,4 @@ textarea {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}*/
+}
