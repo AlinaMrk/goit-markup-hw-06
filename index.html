@@ -61,7 +61,7 @@
                                 <use href="./images/symbol-defs.svg#close"></use>
                             </svg>
                         </button>
-                        <div class="modal-form">
+                        <div class="modal-form-field">
                             <h3 class="form-field-text">Оставьте свои данные, мы вам перезвоним</h3>
                             <form class="form js-speaker-form">
                                 <div class="form-field">
@@ -88,22 +88,22 @@
                                 </div>
                                 <div class="form-field">
                                     <label for="comment">Комментарий</label>
-                                    <textarea class="comment" name="comment" id="comment" rows="8"
+                                    <textarea class="comment" name="comment" id="name" rows="8"
                                         placeholder="Введите текст"></textarea>
                                 </div>
 
                                 <div class="form-field-conditions">
-                                    <label for="conditions"></label>
-                                    <input type="checkbox" name="vector" value="vector" id="vector"
-                                        class="checkbox-box_vector" />
-                                    <span class="checkbox-box"></span>
-                                    <span class="form-check">Соглашаюсь с рассылкой и
-                                        принимаю
-                                        <a href="" class="conditions">Условия договора</a>
-                                    </span>
+                                    <label class="form-label" for="conditions">
+                                        <input type="checkbox" name="vector" value="vector" id="name"
+                                            class="checkbox" />
+                                        <span class="checkbox-icon"></span>
+                                        <span class=" form-conditions">Соглашаюсь с рассылкой и
+                                            принимаю
+                                            <a href="" class="conditions">Условия договора</a>
+                                        </span>
                                     </label>
                                 </div>
-                                <button class="btn-sambit" type="submit">Отправить</button>
+                                <button class="btn-sumbit" type="submit">Отправить</button>
                             </form>
                         </div>
                     </div>
@@ -144,8 +144,7 @@
                         </div>
                         <h3 class="feature-title">Планирование</h3>
                         <p class="feature-text">Равным образом консультация с широким активом в значительной
-                            степени
-                            обуславливает.</p>
+                            степени обуславливает.</p>
                     </li>
                     <li class="feature-item">
                         <div class="feature-icons">
@@ -418,6 +417,19 @@
                     </li>
                 </ul>
 
+            </div>
+            <div class="under">
+                <h3 class="under-text">Подпишитесь на рассылку</h3>
+                <form class="form-field-under">
+                    <input type="email" name="E-mail" placeholder="E-mail" autocomplete="email" class="input" />
+                    <button class="bt-sumbit" type="submit">
+                        Подписаться
+                        <svg class="icon-send" width="24px" height="24px">
+                            <use href="./images/symbol-defs.svg#icon-send"></use>
+                        </svg>
+
+                    </button>
+                </form>
             </div>
 
         </div>

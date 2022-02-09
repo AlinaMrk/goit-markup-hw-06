@@ -49,7 +49,7 @@ a {
   padding-right: 15px;
   margin: 0 auto;
 
-  /*outline: 1px solid red;*/
+  outline: 1px solid red;
 }
 
 .section {
@@ -301,29 +301,28 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
 
   cursor: pointer;
-}
-.modal-close .close {
+
   width: 30px;
   height: 30px;
-  margin-top: 8px;
-  margin-right: 8px;
 
   background-color: #ffffff;
 
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-close .close:hover,
-.modal-close .close:focus {
-  color: var(--accent-color);
+.close:hover {
+  /*.close:focus*/
+  fill: var(--accent-color);
 }
 
 /*---form-modal----*/
-.modal-form {
+.modal-form-field {
   padding: 40px 40px;
 }
 
@@ -364,6 +363,7 @@ ul {
 
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
+
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-field .icon {
@@ -372,22 +372,23 @@ ul {
   margin-left: 15px;
   width: 18px;
   height: 18px;
+  color: #000000;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/**/
-.form-field input:focus,
-.form-field input:hover {
+.form-field input:hover,
+.form-field input:focus {
   outline: none;
   border: 1px solid var(--accent-color);
 }
 .form-field input:hover {
   cursor: pointer;
 }
-.form-field .icon input:focus,
-.form-field .icon input:hover {
+
+.form-field input:focus ~ .icon,
+.form-field input:hover ~ .icon {
   fill: var(--accent-color);
 }
-/**/
+
 textarea {
   resize: none;
   font-size: 12px;
@@ -413,6 +414,12 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
+.form-field .comment:hover,
+.form-field .comment:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
 .form-field-conditions {
   font-style: normal;
   font-weight: normal;
@@ -436,7 +443,33 @@ textarea {
   color: #2196f3;
 }
 
-.btn-sambit {
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox-icon {
+  display: inline-block;
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 4px;
+}
+
+.modal-form-field .checkbox:checked + .checkbox-icon {
+  background-color: #2196f3;
+  background-image: url(../images/full-check.svg);
+  border-color: #2196f3;
+  background-size: contain;
+  background-origin: border-box;
+}
+.btn-sumbit {
   font-family: inherit;
   font-style: normal;
   font-weight: 500;
@@ -457,6 +490,11 @@ textarea {
   background: #2196f3;
   border-radius: 4px;
   border: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-sumbit:hover,
+.btn-sumbit:focus {
+  background-color: #188ce8;
 }
 /*------features-----*/
 .feature-icons {
@@ -1000,22 +1038,77 @@ textarea {
 }
 /*-----*/
 
-.form-field-conditions .checkbox-box {
-  display: inline-block;
-  margin-right: 8px;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #212121;
-
-  border-radius: 2px;
+/*UNTEN-FOOTER*/
+.page-footer .under {
+  width: 570px;
+  margin-left: 93px;
 }
-.form-field-conditions .checkbox-box_vector {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.under .form-field-under {
+  display: flex;
+}
+.under {
+  margin-top: 12px;
+}
+.under .under-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  display: flex;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.form-field-under input {
+  padding-left: 16px;
+  width: 358px;
+  height: 50px;
+
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.form-field-under .input:hover,
+.form-field-under .input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.bt-sumbit {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-left: 12px;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+
+  outline: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bt-submit:hover,
+.bt-submit:focus {
+  background-color: #188ce8;
+}
+.icon-send {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
 }
