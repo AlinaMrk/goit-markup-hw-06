@@ -49,7 +49,7 @@ a {
   padding-right: 15px;
   margin: 0 auto;
 
-  outline: 1px solid red;
+  /*outline: 1px solid red;*/
 }
 
 .section {
@@ -442,8 +442,7 @@ textarea {
 
   color: #2196f3;
 }
-
-.checkbox {
+.modal-form-field .checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -453,22 +452,24 @@ textarea {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.checkbox-icon {
+
+.modal-form-field .checkbox-icon {
   display: inline-block;
   margin-right: 8px;
   width: 15px;
   height: 15px;
   border: 2px solid #212121;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .modal-form-field .checkbox:checked + .checkbox-icon {
-  background-color: #2196f3;
+  background-color: var(--accent-color);
   background-image: url(../images/full-check.svg);
-  border-color: #2196f3;
+  border-color: var(--accent-color);
   background-size: contain;
   background-origin: border-box;
 }
+
 .btn-sumbit {
   font-family: inherit;
   font-style: normal;
@@ -1077,23 +1078,22 @@ textarea {
   outline: none;
   border: 1px solid var(--accent-color);
 }
-.bt-sumbit {
+.but-sumbit {
+  width: 200px;
+  height: 50px;
+  padding: 10px 0;
+  margin-left: 12px;
+
   font-family: inherit;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: #ffffff;
 
-  width: 200px;
-  height: 50px;
-
   display: flex;
   justify-content: center;
   cursor: pointer;
-  padding: 10px 0;
-  margin-left: 12px;
 
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1103,8 +1103,8 @@ textarea {
   outline: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.bt-submit:hover,
-.bt-submit:focus {
+.but-sumbit:hover,
+.but-sumbit:focus {
   background-color: #188ce8;
 }
 .icon-send {
